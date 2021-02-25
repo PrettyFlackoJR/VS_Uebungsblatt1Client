@@ -26,11 +26,18 @@ public class Client implements CommandLineRunner {
         // Bestellung von Kunde 2
         ArrayList<Bestellung> b = service.getKundeFromBestellung(2L);
         for (int i = 0; i < b.size(); i++) {
-            System.out.println(b.get(i).toString());
+            System.out.println(b.get(i));
             System.out.println(service.getKunde(2L));
             for (Bestellposition bp : service.getBestellungFromBestellposition(b.get(i).bestellungsNr)) {
-                System.out.println(bp.anzahl + " * " + service.getArtikel(bp.artikelNr).toString());
+                System.out.println(bp.anzahl + " * " + service.getArtikel(bp.artikelNr));
             }
         }
+
+        // Hinzufügen von 3 Klobürsten
+        Bestellposition bestellposition = new Bestellposition(6L, 0L, 1L, 3);
+        service.postBestellposition(bestellposition);
+        Artikel artikel = new Artikel(3L, "Kamm", 1.69);
+        service.putArtikel(3L, artikel);
+        service.deleteBestellung(1L);
     }
 }

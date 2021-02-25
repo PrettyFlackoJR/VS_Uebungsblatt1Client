@@ -27,4 +27,17 @@ public interface Interface {
     @GetMapping(path = "/artikel/{id}")
     Artikel getArtikel(@PathVariable Long id);
 
+    @PostMapping(path = "/bestellpositionen")
+    Bestellposition postBestellposition(@RequestBody Bestellposition bestellposition);
+
+    @PutMapping(path = "/artikel/{id}")
+    Artikel putArtikel(@PathVariable Long id,
+                       @RequestBody Artikel newArtikel);
+
+    @DeleteMapping(path = "/bestellungen/{id}")
+    void deleteBestellung(@PathVariable Long id);
+
+    @DeleteMapping(path = "/bestellpositionen/{id}")
+    void deleteBestellposition(@PathVariable Long id);
+
 }

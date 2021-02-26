@@ -1,4 +1,4 @@
-package com.example.client;
+package dhbw.vs.uebungsblatt1client;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

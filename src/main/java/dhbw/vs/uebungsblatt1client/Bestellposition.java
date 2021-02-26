@@ -1,4 +1,4 @@
-package com.example.client;
+package dhbw.vs.uebungsblatt1client;
 
 public class Bestellposition {
 
